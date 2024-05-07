@@ -9,6 +9,7 @@ def get_signal_strength(interface):
     time.sleep(2)  # Wait for scanning to complete
     networks = iface.scan_results()
     output = "["
+    networks = networks[:11]
     for network in networks:
         close = "},"
         if network == networks[-1]:
