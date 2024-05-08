@@ -18,7 +18,7 @@ def get_signal_strength(interface):
                 f"\"{network.bssid}\"," + "\"RSSIdBm\":" + f"{network.signal}" + close
     output += "]"
 
-    print(output)
+    print(output.encode("utf-8"))
 
 if __name__ == "__main__":
     if platform.system() == "Windows":
