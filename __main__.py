@@ -15,7 +15,7 @@ def get_signal_strength(interface):
         if network == networks[-1]:
             close = "}"
         output = output + "{" + "\"SSID\":" + f"\"{network.ssid}\"," + "\"BSSID\":" + \
-                f"\"{network.bssid}\"," + "\"RSSIdBm\":" + f"{network.signal}" + close
+            f"\"{network.bssid[:-1]}\"," + "\"RSSIdBm\":" + f"{network.signal}" + close
     output += "]"
 
     print(output)
