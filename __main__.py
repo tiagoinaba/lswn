@@ -8,8 +8,8 @@ def get_signal_strength(interface):
     iface.scan()
     time.sleep(2)  # Wait for scanning to complete
     networks = iface.scan_results()
-    output = "["
     networks = networks[:11]
+    output = "["
     for network in networks:
         close = "},"
         if network == networks[-1]:
@@ -18,7 +18,7 @@ def get_signal_strength(interface):
                 f"\"{network.bssid}\"," + "\"RSSIdBm\":" + f"{network.signal}" + close
     output += "]"
 
-    print(output.encode("utf-8"))
+    print(output)
 
 if __name__ == "__main__":
     if platform.system() == "Windows":
